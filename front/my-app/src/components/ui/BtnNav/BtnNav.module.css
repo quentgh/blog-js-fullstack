@@ -1,0 +1,12 @@
+.btn {
+    padding : .6em 1.2em;
+    border-radius: .4em;
+    background-color: cadetblue;
+  }
+
+.btn a {
+  text-decoration: none;
+  color: var(--txt-cl);
+  font-size: 1.1em;
+}
+  
