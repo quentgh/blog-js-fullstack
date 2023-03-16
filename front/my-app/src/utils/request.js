@@ -1,5 +1,3 @@
-// import axios from "axios";
-
 async function post(route, data) {
   let response = await fetch(route, {
     method: "POST",

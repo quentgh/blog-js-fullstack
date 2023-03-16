@@ -70,7 +70,6 @@ export default function LoginForm() {
         if (data.data.token) {
           navigate("/profile");
         }
-        // this.props.history.push('/profile/');}
       }
     }
   }
