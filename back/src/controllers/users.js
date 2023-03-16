@@ -41,7 +41,6 @@ export async function subscribe(request, response) {
     email: newUser.email,
     username: newUser.username,
     password: hashedPassword,
-    // article: newUser.article,
   });
 
   response.status(200).json({

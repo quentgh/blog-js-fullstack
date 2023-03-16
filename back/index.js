@@ -28,30 +28,3 @@ mongoose
   .catch((err) => {
     console.log("Not connect to DB");
   });
-
-
-////////////////////////////////////////
-// TEST ROUTES
-// const testRouter = express.Router();
-// testRouter.post("/hello", testAddDoc);
-
-// TEST MODEL
-// Schemas
-// const testSchema = mongoose.Schema({
-//   message: { type: String, required: true },
-// });
-
-// Models
-// export const Test = mongoose.model("Test", testSchema);
-
-// TEST CONTROLLERS
-
-// async function testAddDoc(request, response) {
-//   const newDoc = request.body;
-
-//   await Test.create({
-//     message: newDoc.message,
-//   });
-//   response.json({ message: "oki" });
-// }
-////////////////////////////////////////
