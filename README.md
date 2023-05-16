@@ -1,66 +1,68 @@
-# Blog - Javascript - fullstack (en construction)
+# Blog - Javascript - fullstack
 
-## Site créé avec React JS / Express JS / MongoDB
+### Work in progress - the authentication module with JWT works
+
+Tools : React JS / Express JS / MongoDB
 
 ---
 
-## Installation des outils et librairies
+## Install
 
-Installer NodeJS sur son poste de travail.
+- Install NodeJS
 
-### Pour la partie Front-end :
+### Front-end :
 
-- Installer ReactJS avec la solution "Create React App"
+- Install ReactJS - we use "Create React App" here.
 
 ```bash
 npx create-react-app my-app
 ```
 
-puis aller dans le répertoire de travail :
+- Go to your repo :
 
     cd my-app
 
-Installer le package npm pour React Router 
+Install "React Router" package with NPM
 
     npm install react-router-dom
 
 
-Installer la librairie Axios
+Install Axios
 
     npm install axios
 
 
-Possible de faire un peu de ménage dans les fichiers installés par défaut par React create app, en supprimant :
+It's possible to clean some files :
 
-- reportWebVitals.js (à retirer du package.json et du fichier index.js également)
+- reportWebVitals.js (remove from package.json and index.js)
 - App.test.js
 - setupTests.js
 - logo.svg
 
 
-On pourra ajouter par la suite une configuration "proxy" pour simplifier nos appels http en local - dans le package.json, ajouter :
+- Add "proxy" config, into package.json, add this line :
 
-```json
-"proxy":"http://localhost:<choose_port>",
-```
+  ```json
+  "proxy":"http://localhost:<choose_port>",
+  ```
 
 
 &nbsp;
 
-### Pour la partie Back-end,
+### Back-end,
 
-- Initialisation de notre server Node
+- Server node initialization :
 ```bash
 npm init
 ```
 
-- Installation du démon Node JS
+- Install Node JS demon
 
 ```bash
 npm install nodemon --save-dev
 ```
 
-Vérifier la présence du paquet dans notre fichier package.json
+- then check the package.json :
 
   ```json
   {
@@ -70,67 +72,77 @@ Vérifier la présence du paquet dans notre fichier package.json
     "nodemon": "^2.0.21"
   },
   }
-```
-
-- Installer les librairies/frameworks suivants :
-    - Express
-    ```bash
-    npm install express --save
-    ```
-    - Mongoose
-
-    ```bash
-    npm install mongoose --save
-    ```
-
-    - Morgan
-    ```bash
-    npm install morgan --save
-    ```
-
-    - JWT
-    ```bash
-    npm install jsonwebtoken --save
-    ```
-
-    - Bcrypt
-    ```bash
-    npm install bcrypt --save
-    ```
-
- - Vérifier qu'on a bien toutes ces dépendances dans notre fichier package.json
-
-```json
-{
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.0.0",
-    "morgan": "^1.10.0"
-  }
   ```
 
-On va également installer la librairie Axios
+- Install libraries
 
-    npm install axios
+- Express
+```bash
+npm install express --save
+```
+
+  - Mongoose
+```bash
+npm install mongoose --save
+```
+
+  - Morgan
+```bash
+npm install morgan --save
+```
+
+  - JWT
+```bash
+npm install jsonwebtoken --save
+```
+
+  - Bcrypt
+```bash
+npm install bcrypt --save
+```
+
+- Check the package.json
+
+  ```json
+  "dependencies": {
+      "bcrypt": "^5.1.0",
+      "express": "^4.18.2",
+      "jsonwebtoken": "^9.0.0",
+      "mongoose": "^7.0.0",
+      "morgan": "^1.10.0"
+    }
+
+    ```
+
+- Install Axios
+```bash
+npm install axios
+```
 
 
-On pourra aussi paramétrer nos scripts pour lancer notre serveur avec des commandes raccourcies :
+- Update the script line in order to load the node server with these commands :
 
-    npm run dev
+```bash
+npm run dev
+```
+and
 
-ou 
+```bash
+npm run prod
+```
 
-    npm run prod
+  ```json
+  "scripts": {
+    "prod": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  ```
 
-- Ajouter le "type": "module" afin de pouvoir importer des modules dans notre code source avec la syntaxe :
-
-    "import <module_name> from " <module_path> ";
+- Add "type": "module"
 
 &nbsp;
 
-- Enfin, vérifier qu'on a un fichier package.json avec cette configuration :
+- Here we have the target package.json file :
 
   ```json
   {
@@ -157,11 +169,3 @@ ou
   }
   }
   ```
-
-On pourra mettre en place une arborescence pour nos différents scripts nodejs en reprenant une organisation de type MVC :
-
-- ajouter dans le répertoire "src"
-    - un dossier "controllers"
-    - un dossier "routes"
-    - un dossier "models"
-    - un dossier "libs" (pour y mettre des composants fonctionnels éventuellement)
